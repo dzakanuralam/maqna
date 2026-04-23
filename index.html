@@ -934,6 +934,272 @@ footer { background: var(--black); padding: 80px 60px 36px; }
 .footer-social a:hover { color: var(--gold-light); }
 
 /* ===========================================
+   PROGRAMS & PROFILE SECTION
+=========================================== */
+.programs-section { background: var(--white); padding: 100px 60px; }
+.programs-inner { max-width: 1300px; margin: 0 auto; }
+.programs-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 64px; gap: 40px;
+}
+.programs-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.8vw, 52px); font-weight: 300;
+  color: var(--black); line-height: 1.2;
+}
+.programs-header h2 em { font-style: italic; color: var(--gold); }
+.programs-header-right {
+  max-width: 320px; text-align: right;
+}
+.programs-header-right p {
+  font-size: 13px; font-weight: 300; line-height: 1.85; color: var(--text-muted);
+}
+
+/* Subsection divider */
+.programs-divider {
+  height: 1px; background: var(--beige-dark);
+  margin: 80px 0; opacity: 0.6;
+}
+
+/* ---- Subsection 1: Inbound Tours ---- */
+.programs-subsection-title {
+  font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px; font-weight: 400;
+}
+.programs-subsection h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 400; color: var(--black);
+  margin-bottom: 44px; line-height: 1.3;
+}
+.tour-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px;
+  margin-bottom: 80px;
+}
+.tour-product-card {
+  background: var(--white); border: 1px solid var(--beige-dark);
+  padding: 40px 32px; display: flex; flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
+  position: relative; overflow: hidden;
+}
+.tour-product-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  right: 0; height: 2px; background: var(--gold);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.tour-product-card:hover {
+  border-color: var(--gold); box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+.tour-product-card:hover::before { transform: scaleX(1); }
+.tour-product-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; color: var(--black);
+  margin-bottom: 14px; line-height: 1.3;
+}
+.tour-product-desc {
+  font-size: 13.5px; font-weight: 300; line-height: 1.82;
+  color: var(--text-muted); margin-bottom: 28px; flex-grow: 1;
+}
+.tour-product-link {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); text-decoration: none; font-weight: 400;
+  transition: gap 0.3s;
+}
+.tour-product-link:hover { gap: 16px; }
+
+/* ---- Subsection 2: Experiential Learning ---- */
+.programs-grid-2col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+  margin-bottom: 80px; align-items: start;
+}
+.programs-content-block {
+  display: flex; flex-direction: column; gap: 32px;
+}
+.programs-block-label {
+  font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 4px; font-weight: 400;
+}
+.programs-block-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 400; color: var(--black);
+  line-height: 1.3;
+}
+.programs-list-block {
+  display: flex; flex-direction: column; gap: 0;
+}
+.programs-list-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 0; border-bottom: 1px solid var(--beige-dark);
+}
+.programs-list-item:last-child { border-bottom: none; }
+.programs-list-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); flex-shrink: 0; margin-top: 7px;
+  box-shadow: 0 0 0 3px rgba(184,149,90,0.15);
+}
+.programs-list-item span {
+  font-size: 14.5px; font-weight: 300; color: var(--black); line-height: 1.5;
+}
+.programs-badge-list {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;
+}
+.programs-activity-badge {
+  background: var(--beige); color: var(--text-mid);
+  padding: 9px 16px; font-size: 12px; font-weight: 400;
+  letter-spacing: 0.5px; border-radius: 2px;
+}
+.programs-membership-block {
+  background: var(--beige); padding: 28px 32px;
+  border-left: 2px solid var(--gold);
+}
+.programs-membership-note {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 10px; font-weight: 400;
+}
+.programs-membership-text {
+  font-size: 14px; font-weight: 400; color: var(--text-mid); line-height: 1.7;
+  margin-bottom: 16px;
+}
+.programs-membership-meta {
+  font-size: 10px; letter-spacing: 0.8px; color: var(--text-muted);
+  font-weight: 300;
+}
+.aeli-logo-placeholder {
+  width: 100%; aspect-ratio: 2/1;
+  background: linear-gradient(135deg, var(--beige-dark) 0%, var(--beige) 100%);
+  display: flex; align-items: center; justify-content: center;
+  border: 1px dashed var(--beige-mid); margin-top: 18px;
+}
+.aeli-placeholder-text {
+  font-size: 12px; letter-spacing: 1px; color: var(--text-muted);
+  text-align: center; text-transform: uppercase;
+}
+
+/* ---- Subsection 3: Export Trading ---- */
+.programs-export-container {
+  background: var(--black-soft); padding: 56px 52px;
+  margin-bottom: 80px;
+}
+.programs-export-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 400; color: var(--white);
+  line-height: 1.3; margin-bottom: 32px;
+}
+.programs-export-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+}
+.programs-export-content {
+  display: flex; flex-direction: column; gap: 20px;
+}
+.programs-export-text {
+  font-size: 14.5px; font-weight: 300; line-height: 1.88;
+  color: rgba(250,250,248,0.72);
+}
+.programs-export-highlights {
+  display: flex; flex-direction: column; gap: 12px; margin-top: 8px;
+}
+.programs-export-point {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 13px; font-weight: 300; color: rgba(250,250,248,0.68); line-height: 1.6;
+}
+.programs-export-point::before {
+  content: '◆'; color: var(--gold); font-size: 5px; flex-shrink: 0; margin-top: 6px;
+}
+.programs-export-sidebar {
+  display: flex; flex-direction: column; gap: 18px;
+}
+.programs-export-stat {
+  background: rgba(255,255,255,0.06); padding: 24px;
+  border-left: 2px solid var(--gold);
+}
+.programs-export-stat-label {
+  font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 8px; font-weight: 400;
+}
+.programs-export-stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 400; color: var(--white); line-height: 1;
+}
+.programs-export-cta {
+  align-self: flex-start; margin-top: 12px;
+  font-size: 10.5px; font-weight: 500; letter-spacing: 2.5px;
+  text-transform: uppercase; text-decoration: none;
+  color: var(--black); background: var(--gold-light);
+  padding: 15px 36px; border: 1px solid var(--gold-light);
+  transition: background 0.4s, color 0.4s; display: inline-block;
+}
+.programs-export-cta:hover { background: transparent; color: var(--gold-light); }
+
+/* ---- Subsection 4: Founder Profile ---- */
+.programs-profile-container {
+  display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 80px;
+  align-items: start;
+}
+.programs-profile-image {
+  position: relative;
+}
+.programs-profile-placeholder {
+  width: 100%; aspect-ratio: 3/4;
+  background: linear-gradient(160deg, var(--beige) 0%, var(--beige-dark) 100%);
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--beige-mid);
+}
+.programs-profile-placeholder-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px; font-weight: 300; color: var(--gold-pale); line-height: 1;
+}
+.programs-profile-content {
+  display: flex; flex-direction: column; gap: 32px;
+}
+.programs-profile-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 400; color: var(--black);
+  line-height: 1.3;
+}
+.programs-profile-title {
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); font-weight: 400;
+}
+.programs-credentials {
+  display: flex; flex-direction: column; gap: 0;
+}
+.programs-credential-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 0; border-bottom: 1px solid var(--beige-dark);
+  font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.55;
+}
+.programs-credential-item:last-child { border-bottom: none; }
+.programs-credential-item::before {
+  content: '◆'; color: var(--gold); font-size: 6px; flex-shrink: 0; margin-top: 5px;
+}
+.programs-profile-section-block {
+  padding: 24px 0; border-bottom: 1px solid var(--beige-dark);
+}
+.programs-profile-section-block:last-child { border-bottom: none; }
+.programs-profile-section-label {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px; font-weight: 400;
+}
+.programs-profile-section-label::before {
+  content: ''; display: inline-block;
+  width: 20px; height: 1px; background: var(--gold); margin-right: 10px;
+}
+.programs-profile-section-content {
+  font-size: 13px; font-weight: 300; line-height: 1.8;
+  color: var(--text-muted);
+}
+.programs-membership-list {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+}
+.programs-membership-badge {
+  background: var(--beige); color: var(--text-mid);
+  padding: 7px 12px; font-size: 11px; font-weight: 400;
+  letter-spacing: 0.3px; border: 1px solid var(--beige-dark);
+}
+
+/* ===========================================
    RESPONSIVE
 =========================================== */
 @media (max-width: 1100px) {
@@ -946,6 +1212,13 @@ footer { background: var(--black); padding: 80px 60px 36px; }
   .tours-section { padding: 80px 32px; }
   .tour-featured { grid-template-columns: 1fr; }
   .tour-featured-content { padding: 44px 36px; }
+  .programs-section { padding: 80px 32px; }
+  .programs-header { grid-template-columns: 1fr; gap: 12px; }
+  .programs-header-right { text-align: left; max-width: 100%; }
+  .tour-grid { grid-template-columns: 1fr 1fr; }
+  .programs-grid-2col { grid-template-columns: 1fr; gap: 52px; }
+  .programs-export-grid { grid-template-columns: 1fr; gap: 32px; }
+  .programs-profile-container { grid-template-columns: 1fr; gap: 52px; }
   .nz-section { padding: 80px 32px; }
   .nz-inner { grid-template-columns: 1fr; gap: 52px; }
   .arifa-section { padding: 80px 32px; }
@@ -967,17 +1240,27 @@ footer { background: var(--black); padding: 80px 60px 36px; }
   .tours-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   .tours-header-right { text-align: left; max-width: 100%; }
   .tours-secondary { grid-template-columns: 1fr; }
+  .programs-section { padding: 64px 20px; }
+  .programs-header { flex-direction: column; align-items: flex-start; gap: 0; margin-bottom: 48px; }
+  .programs-header-right { text-align: left; }
+  .tour-grid { grid-template-columns: 1fr; }
+  .programs-grid-2col { grid-template-columns: 1fr; gap: 36px; }
+  .programs-export-grid { grid-template-columns: 1fr; }
+  .programs-profile-container { grid-template-columns: 1fr; gap: 36px; }
   .nz-values { grid-template-columns: 1fr; }
   .includes-grid { grid-template-columns: 1fr; }
   .about-stats { flex-direction: column; gap: 0; }
   .stat-item + .stat-item { border-left: none; border-top: 1px solid var(--beige-dark); padding-left: 0; padding-top: 24px; margin-top: 24px; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .philosophy-section, .tours-section, .nz-section,
-  .arifa-section, .cta-section, .contact-section { padding: 64px 20px; }
+  .arifa-section, .cta-section, .contact-section, .programs-section { padding: 64px 20px; }
   .about-inner { padding: 64px 20px; }
   footer { padding: 56px 20px 28px; }
   .contact-card { padding: 36px 24px; }
   .tour-card { height: 420px; }
+  .programs-export-container { padding: 40px 24px; }
+  .programs-export-headline { font-size: 24px; margin-bottom: 24px; }
+  .programs-profile-name { font-size: 24px; }
 }
 </style>
 </head>
@@ -991,6 +1274,7 @@ footer { background: var(--black); padding: 80px 60px 36px; }
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
   <a href="#about" onclick="closeMobile()">About</a>
   <a href="#tours" onclick="closeMobile()">Tours</a>
+  <a href="#programs" onclick="closeMobile()">Programs</a>
   <a href="#nz-detail" onclick="closeMobile()">New Zealand</a>
   <a href="#arifa" onclick="closeMobile()">Consultant</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
@@ -1009,6 +1293,7 @@ footer { background: var(--black); padding: 80px 60px 36px; }
   <ul class="nav-links" role="list">
     <li><a href="#about">About</a></li>
     <li><a href="#tours">Tours</a></li>
+    <li><a href="#programs">Programs</a></li>
     <li><a href="#arifa">Consultant</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#contact" class="nav-cta">Book Now</a></li>
@@ -1089,45 +1374,6 @@ footer { background: var(--black); padding: 80px 60px 36px; }
   </div>
 </section>
 
-<!-- ===================== PHILOSOPHY ===================== -->
-<section class="philosophy-section" id="philosophy">
-  <div class="philosophy-inner">
-    <div class="philosophy-header">
-      <div class="reveal">
-        <div class="section-label">Our Philosophy</div>
-        <h2>Why <em>Traveling<br>with Meaning?</em></h2>
-      </div>
-      <p class="reveal d2">Travel is not only about visiting places — it is about reflection, learning, and understanding. Maqna.ID designs journeys that help participants explore Islamic values through real-world experiences, cultural interaction, and historical insights.</p>
-    </div>
-    <div class="philosophy-grid">
-      <div class="philo-card reveal">
-        <div class="philo-num" aria-hidden="true">01</div>
-        <div class="philo-icon" aria-hidden="true">🌿</div>
-        <div class="philo-title">Islamic Values Reflection</div>
-        <p class="philo-desc">Observe and understand how Islamic principles of justice, tolerance, and harmony are embodied across different societies and cultures around the world.</p>
-      </div>
-      <div class="philo-card reveal d1">
-        <div class="philo-num" aria-hidden="true">02</div>
-        <div class="philo-icon" aria-hidden="true">🕌</div>
-        <div class="philo-title">Historical Learning</div>
-        <p class="philo-desc">Journey through the legacy of Islamic civilizations, Ottoman leadership, and the footsteps of great Muslim figures who shaped history across continents.</p>
-      </div>
-      <div class="philo-card reveal d2">
-        <div class="philo-num" aria-hidden="true">03</div>
-        <div class="philo-icon" aria-hidden="true">🌍</div>
-        <div class="philo-title">Cultural Understanding</div>
-        <p class="philo-desc">Engage deeply with Muslim communities worldwide, building bridges of understanding and celebrating the rich diversity of the global Ummah.</p>
-      </div>
-      <div class="philo-card reveal d3">
-        <div class="philo-num" aria-hidden="true">04</div>
-        <div class="philo-icon" aria-hidden="true">✨</div>
-        <div class="philo-title">Spiritual Growth</div>
-        <p class="philo-desc">Every destination becomes a mirror for personal reflection — a space to grow closer to Islamic values and return home transformed and inspired.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== TOURS ===================== -->
 <section class="tours-section" id="tours">
   <div class="tours-inner">
@@ -1176,8 +1422,8 @@ footer { background: var(--black); padding: 80px 60px 36px; }
       </div>
     </div>
 
-    <!-- Secondary Tours -->
-    <div class="tours-secondary">
+    <!-- Secondary Tours (Turkiye & Serbia) -->
+    <div class="tours-secondary" style="margin-top: 4px;">
       <div class="tour-card reveal">
         <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&auto=format&fit=crop&q=80" alt="Istanbul Turkiye Blue Mosque" loading="lazy">
         <div class="tour-card-overlay"></div>
@@ -1213,6 +1459,215 @@ footer { background: var(--black); padding: 80px 60px 36px; }
         </div>
       </div>
     </div>
+
+    <!-- Inbound Tours -->
+    <div style="margin-top: 80px;">
+      <div class="section-label" style="margin-bottom: 40px;">Inbound Tours</div>
+      <div class="tours-secondary">
+        <div class="tour-card reveal">
+          <img src="images/inbound-sriwijaya.jpg" alt="Sriwijaya Kingdom Heritage Temple" loading="lazy">
+          <div class="tour-card-overlay"></div>
+          <div class="tour-card-content">
+            <div class="tour-card-dest">Indonesia · Sumatera</div>
+            <div class="tour-card-title">Sriwijaya Kingdom Heritage</div>
+            <div class="tour-card-sub">Ancient Maritime Empire</div>
+            <p class="tour-card-desc">Explore the remnants of one of Southeast Asia's greatest empires. Discover ancient temples, maritime history, and the spiritual foundation of Islamic heritage.</p>
+            <div class="tour-seasons">
+              <span class="season-tag">Year-round</span>
+            </div>
+            <div class="tour-route-mini">Palembang · Jambi · Lampung</div>
+            <a href="#contact" class="tour-card-link">Inquire Now <span class="tour-card-link-arrow">→</span></a>
+          </div>
+        </div>
+        <div class="tour-card reveal d2">
+          <img src="images/inbound-bogor.jpg" alt="Bogor West Java Heritage" loading="lazy">
+          <div class="tour-card-overlay"></div>
+          <div class="tour-card-content">
+            <div class="tour-card-dest">Indonesia · West Java</div>
+            <div class="tour-card-title">Inspiring Bogor</div>
+            <div class="tour-card-sub">Islamic Learning Hub</div>
+            <p class="tour-card-desc">Journey through West Java's significant sites from colonial history to natural wonders. Understand how this region became a center of Islamic learning.</p>
+            <div class="tour-seasons">
+              <span class="season-tag">Year-round</span>
+            </div>
+            <div class="tour-route-mini">Bogor · Bandung · Sukabumi</div>
+            <a href="#contact" class="tour-card-link">Inquire Now <span class="tour-card-link-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="tours-secondary" style="margin-top: 4px;">
+        <div class="tour-card reveal">
+          <img src="images/inbound-baduy.jpg" alt="Inner Baduy Banten Tribe" loading="lazy">
+          <div class="tour-card-overlay"></div>
+          <div class="tour-card-content">
+            <div class="tour-card-dest">Indonesia · Banten</div>
+            <div class="tour-card-title">Inner Baduy Adventure</div>
+            <div class="tour-card-sub">Indigenous Wisdom</div>
+            <p class="tour-card-desc">Meet the Inner Baduy people and experience their traditional way of life. A rare opportunity to understand indigenous wisdom and spiritual practices.</p>
+            <div class="tour-seasons">
+              <span class="season-tag">Dry Season</span>
+            </div>
+            <div class="tour-route-mini">Rangkasbitung · Baduy Village · Ciboletes</div>
+            <a href="#contact" class="tour-card-link">Inquire Now <span class="tour-card-link-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROGRAMS & PROFILE ===================== -->
+<section class="programs-section" id="programs">
+  <div class="programs-inner">
+    <div class="programs-header reveal">
+      <div>
+        <div class="section-label">Programs & Profile</div>
+        <h2>Our Services<br><em>&amp; Founder</em></h2>
+      </div>
+      <div class="programs-header-right">
+        <p>Expanding beyond travel to empower individuals and organizations through meaningful learning experiences and strategic business partnerships.</p>
+      </div>
+    </div>
+
+
+
+    <!-- ---- Subsection 2: Experiential Learning ---- -->
+    <div class="programs-subsection reveal">
+      <div class="programs-subsection-title">Program 2 — Experiential Learning Provider</div>
+      <h3 class="programs-subsection h3">Training Programs for Teams &amp; Organizations</h3>
+      
+      <div class="programs-grid-2col">
+        <div class="programs-content-block">
+          <div>
+            <div class="programs-block-label">Our Training Programs</div>
+            <div class="programs-block-title">Building Capacity Through Experience</div>
+          </div>
+          <div class="programs-list-block">
+            <div class="programs-list-item">
+              <div class="programs-list-dot"></div>
+              <span><strong>Personal Character Building</strong> — Develop leadership qualities, emotional intelligence, and personal values through structured reflection and outdoor activities.</span>
+            </div>
+            <div class="programs-list-item">
+              <div class="programs-list-dot"></div>
+              <span><strong>Team Capacity Building</strong> — Strengthen team cohesion, communication, and collaboration through collaborative challenges and shared experiences.</span>
+            </div>
+            <div class="programs-list-item">
+              <div class="programs-list-dot"></div>
+              <span><strong>Corporate Shared Values / CSR Organizer</strong> — Design meaningful corporate social responsibility programs aligned with organizational values and community impact.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="programs-content-block">
+          <div>
+            <div class="programs-block-label">Activity Options</div>
+            <div class="programs-block-title">Engaging & Memorable Activities</div>
+          </div>
+          <div class="programs-badge-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px;">
+            <div style="position: relative; height: 160px; overflow: hidden; border-radius: 4px;">
+              <img src="images/archery.jpg" alt="Archery Activity" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 14px;">
+                <span style="color: white; font-weight: 500; font-size: 14px;">🏹 Archery</span>
+              </div>
+            </div>
+            <div style="position: relative; height: 160px; overflow: hidden; border-radius: 4px;">
+              <img src="images/paintball.jpg" alt="Paintball Activity" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 14px;">
+                <span style="color: white; font-weight: 500; font-size: 14px;">🎯 Paintball</span>
+              </div>
+            </div>
+            <div style="position: relative; height: 160px; overflow: hidden; border-radius: 4px;">
+              <img src="images/rafting.jpg" alt="Rafting Activity" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 14px;">
+                <span style="color: white; font-weight: 500; font-size: 14px;">🚣 Rafting</span>
+              </div>
+            </div>
+            <div style="position: relative; height: 160px; overflow: hidden; border-radius: 4px;">
+              <img src="images/games.jpg" alt="Team Games Activity" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 14px;">
+                <span style="color: white; font-weight: 500; font-size: 14px;">⚽ Team Games</span>
+              </div>
+            </div>
+            <div style="position: relative; height: 160px; overflow: hidden; border-radius: 4px;">
+              <img src="images/camping.png" alt="Camping Activity" style="width: 100%; height: 100%; object-fit: cover;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 14px;">
+                <span style="color: white; font-weight: 500; font-size: 14px;">🏕 Camping</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="programs-membership-block">
+            <div class="programs-membership-note">Partnership Status</div>
+            <div class="programs-membership-text">
+              <strong>Member of AELI</strong><br>
+              Association of Experiential Learning Indonesia
+            </div>
+            <div class="aeli-logo-placeholder">
+              <div class="aeli-placeholder-text">AELI Member Logo<br>Member Number: [###]</div>
+            </div>
+            <div class="programs-membership-meta">
+              Certified experiential learning provider committed to international standards and best practices in transformative education.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="programs-divider"></div>
+
+    <!-- ---- Subsection 3: Founder Profile ---- -->
+    <div class="programs-subsection reveal">
+      <div class="programs-subsection-title">Program 3 — Founder Profile</div>
+      
+      <div class="programs-profile-container">
+        <div class="programs-profile-image">
+          <div class="programs-profile-placeholder">
+            <div class="programs-profile-placeholder-text">👤</div>
+          </div>
+        </div>
+
+        <div class="programs-profile-content">
+          <div>
+            <div class="programs-profile-name">Deny Nur Alam</div>
+            <div class="programs-profile-title">Founder, MAQNA.ID</div>
+          </div>
+
+          <div class="programs-profile-section-block">
+            <div class="programs-profile-section-label">Educational Background</div>
+            <div class="programs-credentials">
+              <div class="programs-credential-item">Sarjana Teknik Industri — Industrial Engineering Degree</div>
+              <div class="programs-credential-item">Certified Experiential Learning (CEL)</div>
+              <div class="programs-credential-item">Certified Tour Leader (CTL)</div>
+              <div class="programs-credential-item">Certified AELI National Trainer (CNT)</div>
+            </div>
+          </div>
+
+          <div class="programs-profile-section-block">
+            <div class="programs-profile-section-label">Professional Background</div>
+            <div class="programs-profile-section-content">
+              Deny Nur Alam is an innovative entrepreneur with a passion for meaningful experiences and strategic international business. Through MAQNA.ID, he has created a unique platform that bridges travel, education, and commerce, helping individuals discover Islamic values globally while facilitating mutually beneficial business partnerships across continents.
+            </div>
+          </div>
+
+          <div class="programs-profile-section-block">
+            <div class="programs-profile-section-label">Recognition & Achievement</div>
+            <div class="programs-profile-section-content">
+              Founded MAQNA.ID as part of the Wonderful Startup Academy initiative, demonstrating commitment to innovation in the travel and learning sectors. Recognized for pioneering experiential learning approaches that combine cultural exploration with personal development.
+            </div>
+          </div>
+
+          <div class="programs-profile-section-block">
+            <div class="programs-profile-section-label">Professional Memberships</div>
+            <div class="programs-membership-list">
+              <span class="programs-membership-badge">AELI</span>
+              <span class="programs-membership-badge">ASPPI</span>
+              <span class="programs-membership-badge">ASTAGATRA RI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1273,6 +1728,45 @@ footer { background: var(--black); padding: 80px 60px 36px; }
         <div class="include-item">Maqna.ID Program</div>
         <div class="include-item">All Entrance Tickets</div>
         <div class="include-item">Islamic Values Sessions</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PHILOSOPHY ===================== -->
+<section class="philosophy-section" id="philosophy">
+  <div class="philosophy-inner">
+    <div class="philosophy-header">
+      <div class="reveal">
+        <div class="section-label">Our Philosophy</div>
+        <h2>Why <em>Traveling<br>with Meaning?</em></h2>
+      </div>
+      <p class="reveal d2">Travel is not only about visiting places — it is about reflection, learning, and understanding. Maqna.ID designs journeys that help participants explore Islamic values through real-world experiences, cultural interaction, and historical insights.</p>
+    </div>
+    <div class="philosophy-grid">
+      <div class="philo-card reveal">
+        <div class="philo-num" aria-hidden="true">01</div>
+        <div class="philo-icon" aria-hidden="true">🌿</div>
+        <div class="philo-title">Islamic Values Reflection</div>
+        <p class="philo-desc">Observe and understand how Islamic principles of justice, tolerance, and harmony are embodied across different societies and cultures around the world.</p>
+      </div>
+      <div class="philo-card reveal d1">
+        <div class="philo-num" aria-hidden="true">02</div>
+        <div class="philo-icon" aria-hidden="true">🕌</div>
+        <div class="philo-title">Historical Learning</div>
+        <p class="philo-desc">Journey through the legacy of Islamic civilizations, Ottoman leadership, and the footsteps of great Muslim figures who shaped history across continents.</p>
+      </div>
+      <div class="philo-card reveal d2">
+        <div class="philo-num" aria-hidden="true">03</div>
+        <div class="philo-icon" aria-hidden="true">🌍</div>
+        <div class="philo-title">Cultural Understanding</div>
+        <p class="philo-desc">Engage deeply with Muslim communities worldwide, building bridges of understanding and celebrating the rich diversity of the global Ummah.</p>
+      </div>
+      <div class="philo-card reveal d3">
+        <div class="philo-num" aria-hidden="true">04</div>
+        <div class="philo-icon" aria-hidden="true">✨</div>
+        <div class="philo-title">Spiritual Growth</div>
+        <p class="philo-desc">Every destination becomes a mirror for personal reflection — a space to grow closer to Islamic values and return home transformed and inspired.</p>
       </div>
     </div>
   </div>
@@ -1425,6 +1919,7 @@ footer { background: var(--black); padding: 80px 60px 36px; }
       <ul>
         <li><a href="#about">About Maqna.ID</a></li>
         <li><a href="#philosophy">Our Philosophy</a></li>
+        <li><a href="#programs">Programs & Profile</a></li>
         <li><a href="#nz-detail">New Zealand Detail</a></li>
         <li><a href="#arifa">Shariah Consultant</a></li>
         <li><a href="#contact">Contact Us</a></li>
