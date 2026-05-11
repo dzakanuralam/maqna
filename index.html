@@ -559,7 +559,7 @@
 
 
 
-     
+
 
 
 
@@ -821,28 +821,28 @@
             transform: translateY(-4px)
         }
 
-.philo-icon {
-    width: 48px;
-    height: 48px;
-    background: var(--beige);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 22px;
-    transition: background .45s;
-    border-radius: 14px;
-}
+        .philo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            transition: background .45s;
+            border-radius: 14px;
+        }
 
-.philo-icon svg {
-    width: 20px;
-    height: 20px;
-    stroke: var(--gold);
-    stroke-width: 2;
-}
+        .philo-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            stroke-width: 2;
+        }
 
-.philo-card:hover .philo-icon {
-    background: rgba(184, 149, 90, .15);
-}
+        .philo-card:hover .philo-icon {
+            background: rgba(184, 149, 90, .15);
+        }
 
         .philo-num {
             position: absolute;
@@ -1520,8 +1520,8 @@
         }
 
         .contact-ico.empty {
-    opacity: 0;
-}
+            opacity: 0;
+        }
 
         .modal-route-desc {
             font-size: 11.5px;
@@ -2317,12 +2317,12 @@
             color: var(--gold);
             font-size: 12px;
             flex-shrink: 0;
-                display: flex;
-    align-items: center;
-    justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-                .arifa-contact-icon svg {
+        .arifa-contact-icon svg {
             color: var(--gold);
             width: 18px;
             height: 18px;
@@ -2496,7 +2496,7 @@
             flex-shrink: 0
         }
 
-         .contact-ico svg {
+        .contact-ico svg {
             width: 22px;
             height: 22px;
             color: var(--gold);
@@ -2874,7 +2874,8 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            display: block
+            display: block;
+            cursor: pointer;
         }
 
         @media(min-aspect-ratio:1/1) {
@@ -2890,6 +2891,7 @@
 <!-- <script>
   lucide.createIcons();
 </script> -->
+
 <body>
 
     <div class="progress-bar" id="progressBar"></div>
@@ -2899,7 +2901,9 @@
     <!-- Popup Ad -->
     <div id="popupAd">
         <button class="popup-close" onclick="closePopup()">✕</button>
-        <div id="popupPoster"><img id="popupImg" src=""></div>
+        <div id="popupPoster" onclick="goToTurkiye()">
+            <img id="popupImg" src="">
+        </div>
     </div>
 
     <!-- Modals JS -->
@@ -2947,7 +2951,7 @@
         <div class="hero-trust" id="hero-trust-badges"></div>
 
     </section>
-  
+
     <!-- Marquee -->
     <div class="marquee-strip" aria-hidden="true">
         <div class="marquee-track" id="marquee-track"></div>
@@ -3094,7 +3098,7 @@
                 <div class="programs-profile-container">
                     <div class="programs-profile-image">
                         <div class="programs-profile-placeholder">
-                            <img src="https://cdn.jsdelivr.net/gh/dzakanuralam/maqna/images/owner.jpeg"/>
+                            <img src="https://cdn.jsdelivr.net/gh/dzakanuralam/maqna/images/owner.jpeg" />
                         </div>
                     </div>
                     <div class="programs-profile-content" id="founder-profile-content"></div>
@@ -3108,13 +3112,13 @@
         <div class="nz-inner">
             <div class="nz-left reveal">
                 <div class="section-label">Deep Dive</div>
-                <h2>New Zealand —<br><em>Where Islamic Values<br>Come to Life</em></h2>
-                <p>New Zealand offers a unique opportunity to understand how Islamic values such as justice,
-                    cleanliness, tolerance, and social harmony are reflected in a non-Muslim country. This journey
-                    combines nature, cultural learning, and meaningful reflection.</p>
-                <p>Participants explore Auckland, Rotorua, Maori communities, and natural landmarks while engaging in
-                    guided discussions about Islamic values in modern society — encouraging reflection on how Muslims
-                    can implement these values in everyday life.</p>
+                <h2>Türkiye —<br><em>Islamic Civilization<br>Come to Life</em></h2>
+                <p>Türkiye offers a rare opportunity to witness the grandeur of Islamic civilization through the legacy
+                    of the Ottoman Empire and the extraordinary leadership of Sultan Muhammad Al-Fatih. This journey
+                    combines history, architecture, and meaningful reflection.</p>
+                <p>Participants explore Edirne, Istanbul, İznik, Bursa, Cappadocia, and Ankara while engaging in guided
+                    discussions about Islamic governance and the historic conquest of Constantinople — one of the
+                    greatest achievements in Islamic history.</p>
                 <div class="nz-values" id="nz-values-grid"></div>
             </div>
             <div class="nz-right reveal d2">
@@ -3274,48 +3278,22 @@
 
         /* --- Tours data --- */
         const TOURS = {
-            nz: {
+            turkiye: {
                 category: 'international',
                 featured: true,
                 badge: 'Featured Journey',
-                image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=900&auto=format&fit=crop&q=80',
-                imgAlt: 'New Zealand North Island landscape',
-                duration: '7 Days · 6 Nights',
-                dest: 'New Zealand · North Island',
-                title: 'Islamicity Index<br>Journey',
-                sub: 'Stunning North Island · Maori Muslim Communities',
-                desc: 'A meaningful journey exploring New Zealand as one of the world\'s top Islamicity Index countries — reflecting Islamic values of justice, cleanliness, tolerance, and social harmony embodied within a remarkable non-Muslim nation.',
-                cardHighlights: ['Auckland City Exploration', 'Maori Muslim Community', 'Rotorua Cultural Village', 'Waitomo Glowworm Cave', 'Lake Taupo', 'Hobbiton & Tongariro', 'Islamic Values Discussions', 'Nature Reflection Sessions'],
-                includeTags: ['✈ Jakarta–Auckland–Jakarta', '🏨 6 Nights Accommodation', '🍽 Full Board Meals', '📚 Maqna.ID Program'],
-                // Modal data
-                modalBadge: 'Featured Journey',
-                modalTitle: 'Islamicity Index Journey<br><em>New Zealand</em>',
-                modalSubtitle: 'North Island · 7 Days 6 Nights',
-                modalAbout: 'A meaningful journey exploring New Zealand as one of the world\'s top Islamicity Index countries — where Islamic values of justice, cleanliness, tolerance, and social harmony are embodied within a remarkable non-Muslim nation. An unforgettable learning experience that redefines how we see the world.',
-                modalHighlights: ['Auckland City Exploration & Islamic Community Visit', 'Maori Muslim Community — Faith Across Cultures', 'Rotorua Cultural Village & Geothermal Wonders', 'Waitomo Glowworm Cave — Natural Miracle', 'Lake Taupo — Largest Lake in Oceania', 'Hobbiton Movie Set & Tongariro National Park', 'Islamic Values Discussion Sessions', 'Nature Reflection & Tafakkur Sessions'],
-                modalIncludes: ['Return flights Jakarta–Auckland–Jakarta', '6 nights hotel accommodation', 'Full board halal meals throughout', 'Professional Maqna.ID guide & program', 'All entrance fees & transport', 'Islamic Values Sessions'],
-                modalInfo: [{ label: 'Duration', value: '7 Days' }, { label: 'Nights', value: '6 Nights' }, { label: 'Destination', value: 'New Zealand' }, { label: 'Group Size', value: 'Max 25' }],
-                modalRoute: [
-                    { name: 'Auckland', desc: 'City exploration, Winter Garden, Islamic community visit, harbour views' },
-                    { name: 'Waitomo', desc: 'Glowworm Caves — natural wonder & reflection' },
-                    { name: 'Rotorua & Maori Community', desc: 'Cultural village, Wai-O-Tapu geothermal, Maori Muslim interaction' },
-                    { name: 'Waitomo & Lake Taupo', desc: 'Glowworm caves, volcanic lakes, reflection sessions in nature' },
-                    { name: 'Hobbiton & Tongariro', desc: 'Shire film set, volcanic national park, panoramic summit views' },
-                ],
-                waMsg: "Assalamu'alaikum%20Maqna.ID%2C%20saya%20tertarik%20paket%20New%20Zealand",
-                emailSubject: 'Inquiry: New Zealand Tour',
-            },
-            turkiye: {
-                category: 'international',
-                image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&auto=format&fit=crop&q=80',
+                image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1200&auto=format&fit=crop&q=80',
                 imgAlt: 'Istanbul Turkiye Blue Mosque',
+                duration: '10 Days · 7 Nights',
                 dest: 'Turkiye · 10 Days 7 Nights',
                 title: 'Islamic Civilization Tour',
                 sub: 'Sultan Muhammad Al-Fatih',
                 desc: 'Explore the legacy of the Ottoman Empire and the extraordinary leadership of Sultan Muhammad Al-Fatih. Journey through Islamic governance and the historic conquest of Constantinople.',
+                cardHighlights: ['Hagia Sophia', 'Topkapi Palace', 'Bosphorus Cruise', 'Blue Mosque', 'Bursa Ottoman Heritage', 'Cappadocia', 'Selimiye Mosque', 'Fatih Mosque'],
+                includeTags: ['✈ International Flights', '🏨 4/5-Star Hotels', '🍽 Full Board Meals', '🕌 Islamic Civilization Program'],
                 seasons: ['Winter', 'Spring', 'Autumn'],
                 route: 'Istanbul · Bursa · Edirne',
-                modalBadge: 'Islamic Civilization',
+                modalBadge: 'Featured Journey',
                 modalTitle: 'Islamic Civilization Tour<br><em>Türkiye</em>',
                 modalSubtitle: 'Edirne · Istanbul · İznik · Bursa · Cappadocia · Ankara · 10 Days 7 Nights',
                 modalAbout: 'Explore the legacy of the Ottoman Empire and the extraordinary leadership of Sultan Muhammad Al-Fatih. Journey through the heart of Islamic governance, architecture, and the historic conquest of Constantinople — one of the greatest achievements in Islamic history.',
@@ -3333,6 +3311,54 @@
                 ],
                 waMsg: "Assalamu'alaikum%20Maqna.ID%2C%20saya%20tertarik%20paket%20Turkiye",
                 emailSubject: 'Inquiry: Turkiye Tour',
+            },
+            nz: {
+                category: 'international',
+                image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=900&auto=format&fit=crop&q=80',
+                imgAlt: 'New Zealand North Island landscape',
+                dest: 'New Zealand · 7 Days 6 Nights',
+                title: 'Islamicity Index Journey',
+                sub: 'Maori Muslim Communities',
+                desc: 'A meaningful journey exploring New Zealand as one of the world\'s top Islamicity Index countries — reflecting Islamic values of justice, cleanliness, tolerance, and social harmony embodied within a remarkable non-Muslim nation.',
+                seasons: ['Winter', 'Spring', 'Autumn'],
+                route: 'Auckland · Waitomo · Rotorua · Taupo',
+                modalBadge: 'Islamicity Journey',
+                modalTitle: 'Islamicity Index Journey<br><em>New Zealand</em>',
+                modalSubtitle: 'North Island · 7 Days 6 Nights',
+                modalAbout: 'A meaningful journey exploring New Zealand as one of the world\'s top Islamicity Index countries — where Islamic values of justice, cleanliness, tolerance, and social harmony are embodied within a remarkable non-Muslim nation. An unforgettable learning experience that redefines how we see the world.',
+                modalHighlights: [
+                    'Auckland City Exploration & Islamic Community Visit',
+                    'Maori Muslim Community — Faith Across Cultures',
+                    'Rotorua Cultural Village & Geothermal Wonders',
+                    'Waitomo Glowworm Cave — Natural Miracle',
+                    'Lake Taupo — Largest Lake in Oceania',
+                    'Hobbiton Movie Set & Tongariro National Park',
+                    'Islamic Values Discussion Sessions',
+                    'Nature Reflection & Tafakkur Sessions'
+                ],
+                modalIncludes: [
+                    'Return flights Jakarta–Auckland–Jakarta',
+                    '6 nights hotel accommodation',
+                    'Full board halal meals throughout',
+                    'Professional Maqna.ID guide & program',
+                    'All entrance fees & transport',
+                    'Islamic Values Sessions'
+                ],
+                modalInfo: [
+                    { label: 'Duration', value: '7 Days' },
+                    { label: 'Nights', value: '6 Nights' },
+                    { label: 'Destination', value: 'New Zealand' },
+                    { label: 'Seasons', value: 'Winter · Spring · Autumn' }
+                ],
+                modalRoute: [
+                    { name: 'Auckland', desc: 'City exploration, Winter Garden, Islamic community visit, harbour views' },
+                    { name: 'Waitomo', desc: 'Glowworm Caves — natural wonder & reflection' },
+                    { name: 'Rotorua', desc: 'Cultural village, Wai-O-Tapu geothermal & Maori interaction' },
+                    { name: 'Lake Taupo', desc: 'Volcanic lake landscapes & reflection sessions' },
+                    { name: 'Hobbiton & Tongariro', desc: 'Shire film set & volcanic national park exploration' },
+                ],
+                waMsg: "Assalamu'alaikum%20Maqna.ID%2C%20saya%20tertarik%20paket%20New%20Zealand",
+                emailSubject: 'Inquiry: New Zealand Tour',
             },
             serbia: {
                 category: 'international',
@@ -3447,15 +3473,32 @@
         ];
 
         /* --- NZ values & route & includes --- */
-        const NZ_VALUES = ['Justice & Rule of Law', 'Social Harmony', 'Environmental Care', 'Community Tolerance', 'Maori Muslim Interaction', 'Spiritual Contemplation'];
+        const NZ_VALUES = ['Ottoman Legacy & Civilization',
+            'Islamic Governance',
+            'Architectural Mastery',
+            'Conquest & Leadership',
+            'Cultural Tolerance',
+            'Spiritual Reflection'];
         const NZ_ROUTE = [
-            { name: 'Auckland', desc: 'City exploration, Winter Garden, Islamic community visit, harbour views' },
-            { name: 'Rotorua & Maori Community', desc: 'Cultural village, Wai-O-Tapu geothermal, Maori Muslim community interaction' },
-            { name: 'Waitomo & Lake Taupo', desc: 'Glowworm caves, volcanic lakes, reflection sessions in nature' },
-            { name: 'Hobbiton & Tongariro', desc: 'Shire film set, volcanic national park, panoramic summit views' },
+            { name: 'Edirne', desc: 'Selimiye Mosque, Beyazid II Health Museum & Ottoman heritage journey' },
+            { name: 'Istanbul', desc: 'Abu Ayyub Al Ansari Mosque, Pierre Loti & Panorama 1453' },
+            { name: 'İznik', desc: 'Historic İznik Hagia Sophia & the iconic Özbek Mosque' },
+            { name: 'Bursa', desc: 'Ulu Cami, Koza Han & the tombs of Osman Gazi and Orhan Gazi' },
+            { name: 'Cappadocia', desc: 'Göreme Panorama, Underground City & optional Hot Air Balloon experience' },
+            { name: 'Ankara', desc: 'Scenic Salt Lake stop on the journey back to Istanbul' },
+            { name: 'Istanbul', desc: 'Blue Mosque, Hagia Sophia, Topkapi Palace & Fatih Mosque' },
         ];
-        const NZ_INCLUDES = ['6 Nights Accommodation', 'Full Board (B / L / D)', 'Return Flight Jakarta–Auckland', 'Maqna.ID Program', 'All Entrance Tickets', 'Islamic Values Sessions'];
-
+        const NZ_INCLUDES = [
+            'International Flights (Emirates / Qatar / Etihad)',
+            '4/5-Star Hotels',
+            'Full Board Meals',
+            'Islamic Civilization Program',
+            'All Entrance Tickets',
+            'Bosphorus Cruise',
+            'Indonesian-Speaking Tour Guide',
+            'Tour Leader from Indonesia',
+            'Airport Handling Jakarta',
+        ];
         /* --- Training programs --- */
         const TRAINING_PROGRAMS = [
             { title: 'Personal Character Building', desc: 'Develop leadership qualities, emotional intelligence, and personal values through structured reflection and outdoor activities.' },
@@ -3542,7 +3585,7 @@
                     { icon: 'phone', html: `<a href="tel:+6281519700999">+62 815 1970 0999</a>` },
                     { icon: 'mail', html: `<a href="mailto:arifa.fiqria@gmail.com">arifa.fiqria@gmail.com</a>` },
                     { icon: 'link', html: `<a href="https://linkedin.com/in/arifa-fiqria-barchia-7a340722" target="_blank" rel="noopener">Arifa Fiqria Barchia</a>` },
-                    {icon: 'none', html: '<span></span>'}
+                    { icon: 'none', html: '<span></span>' }
                 ],
                 waHref: 'https://wa.me/6281519700999',
                 waBtnLabel: 'WhatsApp Consultant',
@@ -3692,15 +3735,15 @@
             document.getElementById('modals-container').innerHTML = Object.entries(TOURS).map(([id, t]) => renderModal(id, t)).join('');
 
             // Tours section
-            const featured = TOURS.nz;
+            const featured = TOURS.turkiye;
             const highlightsHTML = featured.cardHighlights.map(h => `<li>${h}</li>`).join('');
             const includeTagsHTML = featured.includeTags.map(t => `<span class="include-tag">${t}</span>`).join('');
-            const intlCards = ['turkiye', 'serbia'].map((id, i) => renderTourCard(id, TOURS[id], i === 1 ? ' d2' : '')).join('');
+            const intlCards = ['nz', 'serbia'].map((id, i) => renderTourCard(id, TOURS[id], i === 1 ? ' d2' : '')).join('');
             const inboundCards1 = ['sriwijaya', 'bogor'].map((id, i) => renderTourCard(id, TOURS[id], i === 1 ? ' d2' : '')).join('');
             const inboundCard2 = renderTourCard('baduy', TOURS.baduy);
 
             document.getElementById('tours-container').innerHTML = `
-        <div class="tour-featured reveal" data-category="international" onclick="openModal('nz')" role="button" aria-label="View New Zealand tour details">
+       <div id="turkiyeFeatured" class="tour-featured reveal" data-category="international" onclick="openModal('turkiye')" role="button" aria-label="View Turkey tour details">
             <div class="tour-featured-img">
                 <img src="${featured.image}" alt="${featured.imgAlt}" loading="lazy">
                 <div class="tour-badge">${featured.badge}</div>
@@ -3818,9 +3861,9 @@
   <li>
     <div class="contact-ico ${item.icon === 'none' ? 'empty' : ''}">
       ${item.icon !== 'none'
-        ? `<i data-lucide="${item.icon}"></i>`
-        : ''
-      }
+                    ? `<i data-lucide="${item.icon}"></i>`
+                    : ''
+                }
     </div>
 
     ${item.html}
@@ -3960,6 +4003,24 @@
         }
         function openPopup() { document.getElementById('popupAd').style.display = 'flex'; document.body.classList.add('no-scroll'); }
         function closePopup() { document.getElementById('popupAd').style.display = 'none'; document.body.classList.remove('no-scroll'); }
+
+        function goToTurkiye() {
+            closePopup();
+
+            const featured = document.getElementById('turkiyeFeatured');
+
+            if (featured) {
+                featured.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+                setTimeout(() => {
+                    openModal('turkiye');
+                }, 1200);
+            }
+        }
+
         window.addEventListener('load', openPopup);
         setPoster();
         window.addEventListener('resize', setPoster);
