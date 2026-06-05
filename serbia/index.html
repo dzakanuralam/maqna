@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags injected by JS -->
+    <meta name="description" id="meta-desc" content="">
+    <title id="page-title">Tour — Maqna.ID</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Maqna.ID">
+    <meta property="og:title" id="og-title" content="">
+    <meta property="og:description" id="og-desc" content="">
+    <meta property="og:image" id="og-image" content="">
+
+    <!-- Canonical injected by JS -->
+    <link id="canonical" rel="canonical" href="">
+
+    <!-- Schema.org JSON-LD injected by JS -->
+    <script id="schema-org" type="application/ld+json"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --black-soft: #111111;
+            --white: #fafaf8;
+            --beige: #f2ede6;
+            --beige-dark: #e8e0d4;
+            --beige-mid: #d6cbba;
+            --gold: #b8955a;
+            --gold-light: #d4af7a;
+            --gold-pale: #ecdfc8;
+            --text-muted: #6b6560;
+            --text-mid: #3d3830;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+        img { display: block; max-width: 100%; }
+        a { text-decoration: none; cursor: pointer; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 20px 60px;
+            background: rgba(10,10,10,.96);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 1px 0 rgba(184,149,90,.15);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 13px; }
+        .nav-logo img { height: 42px; width: 42px; object-fit: contain; mix-blend-mode: screen; }
+        .nav-logo-name { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 500; color: var(--white); letter-spacing: 2.5px; }
+        .nav-logo-tag { font-size: 8px; font-weight: 200; color: var(--gold-light); letter-spacing: 3px; text-transform: uppercase; margin-top: 2px; }
+        .nav-back {
+            font-size: 10px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase;
+            color: rgba(250,250,248,.65); display: flex; align-items: center; gap: 8px;
+            transition: color .3s;
+        }
+        .nav-back:hover { color: var(--gold-light); }
+        .nav-cta {
+            font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--black); background: var(--gold-light); padding: 10px 24px;
+            transition: background .3s;
+        }
+        .nav-cta:hover { background: var(--white); }
+
+        /* HERO */
+        .hero {
+            height: 70vh; min-height: 500px;
+            position: relative; overflow: hidden;
+            display: flex; align-items: flex-end;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background-size: cover; background-position: center;
+            animation: heroZoom 20s ease-in-out infinite alternate;
+        }
+        .hero-bg::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(10,10,10,.2) 0%, rgba(10,10,10,.5) 50%, rgba(10,10,10,.92) 100%);
+        }
+        @keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1.0); } }
+        .hero-content {
+            position: relative; z-index: 2;
+            padding: 0 60px 60px; width: 100%; max-width: 1300px; margin: 0 auto;
+            opacity: 0; animation: fadeUp .9s .3s forwards;
+        }
+        .hero-badge {
+            display: inline-block; background: var(--gold); color: var(--black);
+            font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
+            padding: 7px 16px; font-weight: 600; margin-bottom: 18px;
+        }
+        .hero-dest {
+            font-size: 10px; letter-spacing: 4px; color: var(--gold-light);
+            text-transform: uppercase; font-weight: 300; margin-bottom: 12px;
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(40px, 6vw, 80px); font-weight: 300;
+            color: var(--white); line-height: 1.05; margin-bottom: 10px;
+        }
+        .hero-title em { font-style: italic; color: var(--gold-light); }
+        .hero-subtitle {
+            font-size: 13px; font-weight: 200; color: var(--gold-light);
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            background: var(--black-soft);
+            padding: 14px 60px;
+            font-size: 10.5px; font-weight: 300; color: rgba(250,250,248,.4);
+            letter-spacing: .5px;
+        }
+        .breadcrumb a { color: rgba(250,250,248,.4); transition: color .3s; }
+        .breadcrumb a:hover { color: var(--gold-light); }
+        .breadcrumb span { color: rgba(250,250,248,.65); margin: 0 8px; }
+
+        /* MAIN BODY */
+        .tour-body {
+            max-width: 1300px; margin: 0 auto;
+            display: grid; grid-template-columns: 1.35fr .65fr;
+            gap: 0; padding: 80px 60px; align-items: start;
+        }
+        .tour-left { padding-right: 80px; border-right: 1px solid var(--beige-dark); }
+        .tour-right { padding-left: 60px; position: sticky; top: 100px; }
+
+        /* SECTION LABELS */
+        .section-label {
+            font-size: 9px; font-weight: 400; letter-spacing: 4px;
+            text-transform: uppercase; color: var(--gold);
+            display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+        }
+        .section-label::before {
+            content: ''; display: block; width: 28px; height: 1px;
+            background: var(--gold); flex-shrink: 0;
+        }
+
+        /* ABOUT */
+        .tour-about { margin-bottom: 56px; }
+        .tour-about-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 3vw, 42px); font-weight: 300;
+            color: var(--black); line-height: 1.2; margin-bottom: 20px;
+        }
+        .tour-about-title em { font-style: italic; color: var(--gold); }
+        .tour-about p {
+            font-size: 15px; font-weight: 300; line-height: 1.9;
+            color: var(--text-muted); margin-bottom: 16px;
+        }
+
+        /* HIGHLIGHTS */
+        .tour-highlights { margin-bottom: 56px; }
+        .highlights-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3px;
+        }
+        .highlight-item {
+            background: var(--beige); padding: 18px 20px;
+            display: flex; align-items: flex-start; gap: 12px;
+            font-size: 13.5px; font-weight: 300; color: var(--text-mid);
+            line-height: 1.45; border-left: 2px solid transparent;
+            transition: border-color .3s, background .3s;
+        }
+        .highlight-item:hover { border-left-color: var(--gold); background: var(--beige-dark); }
+        .highlight-item::before {
+            content: '◆'; color: var(--gold); font-size: 6px;
+            flex-shrink: 0; margin-top: 5px;
+        }
+
+        /* ROUTE */
+        .tour-route { margin-bottom: 56px; }
+        .route-steps { display: flex; flex-direction: column; }
+        .route-step {
+            display: flex; gap: 20px; padding: 20px 0;
+            border-bottom: 1px solid var(--beige-dark); align-items: flex-start;
+        }
+        .route-step:last-child { border-bottom: none; }
+        .route-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px; font-weight: 400; color: var(--gold);
+            width: 24px; flex-shrink: 0; padding-top: 3px;
+        }
+        .route-dot-wrap { display: flex; flex-direction: column; align-items: center; gap: 0; flex-shrink: 0; padding-top: 5px; }
+        .route-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 3px rgba(184,149,90,.18); }
+        .route-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--black); line-height: 1.2; }
+        .route-desc { font-size: 13px; font-weight: 300; color: var(--text-muted); margin-top: 4px; line-height: 1.65; }
+
+        /* INCLUDES */
+        .tour-includes { margin-bottom: 56px; }
+        .includes-list { display: flex; flex-direction: column; }
+        .include-item {
+            display: flex; align-items: center; gap: 14px;
+            padding: 14px 0; border-bottom: 1px solid var(--beige-dark);
+            font-size: 13.5px; font-weight: 300; color: var(--text-mid); line-height: 1.45;
+        }
+        .include-item:last-child { border-bottom: none; }
+        .include-item::before { content: '✓'; color: var(--gold); font-size: 12px; flex-shrink: 0; font-weight: 600; }
+
+        /* RIGHT SIDEBAR */
+        .info-card {
+            background: var(--black-soft); padding: 36px 32px; margin-bottom: 16px;
+        }
+        .info-card-title {
+            font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 20px; font-weight: 400;
+        }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-bottom: 4px; }
+        .info-item { background: rgba(255,255,255,.05); padding: 14px 16px; }
+        .info-label { font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(250,250,248,.38); margin-bottom: 5px; }
+        .info-value { font-size: 14px; font-weight: 400; color: var(--white); }
+
+        .cta-card { background: var(--beige); padding: 32px; }
+        .cta-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px; font-weight: 400; color: var(--black);
+            margin-bottom: 8px; line-height: 1.3;
+        }
+        .cta-card-sub {
+            font-size: 12px; font-weight: 300; color: var(--text-muted);
+            margin-bottom: 24px; line-height: 1.65;
+        }
+        .btn-wa {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            background: #25D366; color: #fff;
+            padding: 14px 24px; font-size: 11.5px; letter-spacing: 1.5px;
+            font-weight: 400; text-transform: uppercase; transition: filter .3s;
+            margin-bottom: 10px;
+        }
+        .btn-wa:hover { filter: brightness(.88); }
+        .btn-email {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            background: var(--black); color: var(--white);
+            padding: 14px 24px; font-size: 11.5px; letter-spacing: 1.5px;
+            font-weight: 400; text-transform: uppercase; transition: background .3s;
+            margin-bottom: 10px;
+        }
+        .btn-email:hover { background: var(--text-mid); }
+        .btn-itinerary {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            background: #5E0006; color: var(--white);
+            padding: 14px 24px; font-size: 11.5px; letter-spacing: 1.5px;
+            font-weight: 400; text-transform: uppercase; transition: opacity .3s;
+        }
+        .btn-itinerary:hover { opacity: .85; }
+
+        /* RELATED TOURS */
+        .related-section {
+            background: var(--beige); padding: 80px 60px;
+        }
+        .related-inner { max-width: 1300px; margin: 0 auto; }
+        .related-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 3vw, 42px); font-weight: 300;
+            color: var(--black); margin-bottom: 40px; line-height: 1.2;
+        }
+        .related-title em { font-style: italic; color: var(--gold); }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+        .related-card {
+            position: relative; overflow: hidden; height: 320px; cursor: pointer;
+            text-decoration: none; display: block;
+        }
+        .related-card img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform .9s cubic-bezier(.22,1,.36,1), filter .5s;
+            filter: brightness(.62) saturate(.85);
+        }
+        .related-card:hover img { transform: scale(1.05); filter: brightness(.45) saturate(.8); }
+        .related-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(10,10,10,.85) 0%, transparent 60%);
+        }
+        .related-content {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 24px 26px;
+        }
+        .related-dest { font-size: 9px; letter-spacing: 3.5px; color: var(--gold-light); text-transform: uppercase; margin-bottom: 6px; }
+        .related-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--white); line-height: 1.2; }
+        .related-link {
+            display: inline-flex; align-items: center; gap: 7px;
+            font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--gold-light); margin-top: 10px; transition: gap .3s;
+        }
+        .related-card:hover .related-link { gap: 14px; }
+
+        /* FOOTER */
+        footer { background: var(--black); padding: 48px 60px; }
+        .footer-inner {
+            max-width: 1300px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 20px;
+        }
+        .footer-brand { font-family: 'Cinzel', serif; font-size: 15px; color: var(--white); letter-spacing: 3px; }
+        .footer-tag { font-size: 9px; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-top: 4px; }
+        .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+        .footer-links a { font-size: 10.5px; font-weight: 300; color: rgba(255,255,255,.38); letter-spacing: .5px; transition: color .3s; }
+        .footer-links a:hover { color: var(--gold-light); }
+        .footer-copy { font-size: 10px; color: rgba(255,255,255,.18); letter-spacing: .5px; margin-top: 24px; text-align: center; max-width: 1300px; margin-left: auto; margin-right: auto; }
+
+        /* RESPONSIVE */
+        @media(max-width: 1100px) {
+            .tour-body { grid-template-columns: 1fr; padding: 60px 32px; }
+            .tour-left { padding-right: 0; border-right: none; border-bottom: 1px solid var(--beige-dark); padding-bottom: 56px; margin-bottom: 56px; }
+            .tour-right { padding-left: 0; position: static; }
+            nav { padding: 16px 32px; }
+            .hero-content { padding: 0 32px 48px; }
+            .breadcrumb { padding: 14px 32px; }
+            .related-section { padding: 60px 32px; }
+            footer { padding: 40px 32px; }
+        }
+        @media(max-width: 768px) {
+            nav { padding: 14px 20px; }
+            .hero-content { padding: 0 20px 40px; }
+            .breadcrumb { padding: 14px 20px; }
+            .tour-body { padding: 48px 20px; }
+            .highlights-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr 1fr; }
+            .related-grid { grid-template-columns: 1fr; }
+            .related-section { padding: 48px 20px; }
+            footer { padding: 36px 20px; }
+            .footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <a href="/" class="nav-logo">
+        <img src="https://cdn.jsdelivr.net/gh/dzakanuralam/maqna/images/maqna.png" alt="Maqna.ID Logo">
+        <div>
+            <div class="nav-logo-name">MAQNA.ID</div>
+            <div class="nav-logo-tag">Traveling with Meaning</div>
+        </div>
+    </a>
+    <a href="/#tours" class="nav-back">← All Tours</a>
+    <a href="/#contact" class="nav-cta">Book Now</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-content" id="hero-content"></div>
+</section>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb" id="breadcrumb"></div>
+
+<!-- Main Body -->
+<div class="tour-body">
+    <div class="tour-left" id="tour-left"></div>
+    <div class="tour-right" id="tour-right"></div>
+</div>
+
+<!-- Related Tours -->
+<section class="related-section">
+    <div class="related-inner">
+        <div class="section-label">Explore More</div>
+        <h2 class="related-title">Other <em>Meaningful Journeys</em></h2>
+        <div class="related-grid" id="related-grid"></div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">MAQNA.ID</div>
+            <div class="footer-tag">Traveling with Meaning · Bogor, Indonesia</div>
+        </div>
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/#tours">All Tours</a>
+            <a href="/#about">About</a>
+            <a href="/#programs">Programs</a>
+            <a href="/#contact">Contact</a>
+            <a href="https://wa.me/628164610513" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+    </div>
+    <p class="footer-copy">© 2025 Maqna.ID · All Rights Reserved</p>
+</footer>
+
+<!-- Load shared data -->
+<script src="/tours-data.js"></script>
+
+<script>
+// ============================================================
+// TOUR PAGE RENDERER
+window.TOUR_ID = 'serbia';
+// ============================================================
+(function() {
+    const id = window.TOUR_ID;
+    const t = TOURS[id];
+    if (!t) { document.title = '404 — Tour Not Found | Maqna.ID'; return; }
+
+    // --- Meta & SEO ---
+    document.getElementById('page-title').textContent = t.metaTitle;
+    document.getElementById('meta-desc').setAttribute('content', t.metaDesc);
+    document.getElementById('og-title').setAttribute('content', t.metaTitle);
+    document.getElementById('og-desc').setAttribute('content', t.metaDesc);
+    document.getElementById('og-image').setAttribute('content', t.image);
+    document.getElementById('canonical').setAttribute('href', `https://maqna.id/${t.slug}`);
+
+    // Schema.org TouristTrip structured data
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "TouristTrip",
+        "name": t.title,
+        "description": t.metaDesc,
+        "image": t.image,
+        "touristType": "Muslim travelers",
+        "provider": {
+            "@type": "TravelAgency",
+            "name": "Maqna.ID",
+            "url": "https://maqna.id",
+            "address": { "@type": "PostalAddress", "addressLocality": "Bogor", "addressCountry": "ID" }
+        }
+    };
+    document.getElementById('schema-org').textContent = JSON.stringify(schema);
+
+    // --- Hero ---
+    document.getElementById('hero-bg').style.backgroundImage = `url('${t.image}')`;
+    document.getElementById('hero-content').innerHTML = `
+        <div class="hero-badge">${t.badge}</div>
+        <div class="hero-dest">${t.dest}</div>
+        <h1 class="hero-title">${t.title}<br><em>${t.sub}</em></h1>
+        <div class="hero-subtitle">${t.duration}</div>
+    `;
+
+    // --- Breadcrumb ---
+    document.getElementById('breadcrumb').innerHTML =
+        `<a href="/">Home</a> <span>›</span> <a href="/#tours">Tours</a> <span>›</span> ${t.title}`;
+
+    // --- Left Column ---
+    const highlightsHTML = t.highlights.map(h =>
+        `<div class="highlight-item">${h}</div>`
+    ).join('');
+
+    const routeHTML = t.route.map((r, i) => `
+        <div class="route-step">
+            <div class="route-dot-wrap"><div class="route-dot"></div></div>
+            <div>
+                <div class="route-name">${r.name}</div>
+                <div class="route-desc">${r.desc}</div>
+            </div>
+        </div>`
+    ).join('');
+
+    const includesHTML = t.includes.map(inc =>
+        `<div class="include-item">${inc}</div>`
+    ).join('');
+
+    document.getElementById('tour-left').innerHTML = `
+        <div class="tour-about">
+            <div class="section-label">About This Journey</div>
+            <h2 class="tour-about-title">${t.title}<br><em>${t.sub}</em></h2>
+            <p>${t.desc}</p>
+            <p>Every stop on this journey is carefully curated to bring meaningful reflection, historical understanding, and spiritual growth. Maqna.ID ensures that every moment of your travel connects with Islamic values and purposeful learning.</p>
+        </div>
+
+        <div class="tour-highlights">
+            <div class="section-label">Journey Highlights</div>
+            <div class="highlights-grid">${highlightsHTML}</div>
+        </div>
+
+        <div class="tour-route">
+            <div class="section-label">Journey Route</div>
+            <div class="route-steps">${routeHTML}</div>
+        </div>
+
+        <div class="tour-includes">
+            <div class="section-label">What's Included</div>
+            <div class="includes-list">${includesHTML}</div>
+        </div>
+    `;
+
+    // --- Right Sidebar ---
+    const infoHTML = t.info.map(i => `
+        <div class="info-item">
+            <div class="info-label">${i.label}</div>
+            <div class="info-value">${i.value}</div>
+        </div>`
+    ).join('');
+
+    const itineraryBtn = t.itinerary
+        ? `<a href="${t.itinerary}" download class="btn-itinerary">📄 Download Itinerary</a>`
+        : '';
+
+    const waIcon = `<svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
+
+    document.getElementById('tour-right').innerHTML = `
+        <div class="info-card">
+            <div class="info-card-title">Tour Details</div>
+            <div class="info-grid">${infoHTML}</div>
+        </div>
+        <div class="cta-card">
+            <div class="cta-card-title">Ready to Join?</div>
+            <div class="cta-card-sub">Contact us to reserve your spot or ask any questions about this journey.</div>
+            <a href="${WA_BASE}?text=${t.waMsg}" target="_blank" rel="noopener" class="btn-wa">${waIcon} WhatsApp — Book Now</a>
+            <a href="mailto:${EMAIL}?subject=${encodeURIComponent(t.emailSubject)}" class="btn-email">✉ Send Email Inquiry</a>
+            ${itineraryBtn}
+        </div>
+    `;
+
+    // --- Related Tours ---
+    const otherIds = Object.keys(TOURS).filter(k => k !== id).slice(0, 3);
+    document.getElementById('related-grid').innerHTML = otherIds.map(rid => {
+        const r = TOURS[rid];
+        return `
+        <a href="/${r.slug}" class="related-card">
+            <img src="${r.image}" alt="${r.imgAlt}" loading="lazy">
+            <div class="related-overlay"></div>
+            <div class="related-content">
+                <div class="related-dest">${r.dest}</div>
+                <div class="related-name">${r.title}</div>
+                <span class="related-link">View Tour →</span>
+            </div>
+        </a>`;
+    }).join('');
+
+})();
+</script>
+
+</body>
+</html>
