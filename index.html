@@ -751,8 +751,8 @@
         window.filterTours=(cat,btn)=>{document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');const featured=document.querySelector('.tour-featured');const intlSec=document.querySelector('.tours-secondary[data-category="international"]');const inboundSec=document.querySelector('[data-category="inbound"]');if(cat==='all'){featured&&(featured.style.display='grid');intlSec&&(intlSec.style.display='grid');inboundSec&&(inboundSec.style.display='block');}else if(cat==='international'){featured&&(featured.style.display='grid');intlSec&&(intlSec.style.display='grid');inboundSec&&(inboundSec.style.display='none');}else if(cat==='inbound'){featured&&(featured.style.display='none');intlSec&&(intlSec.style.display='none');inboundSec&&(inboundSec.style.display='block');}};
     })();
 
-    const POSTER_DESKTOP='https://raw.githubusercontent.com/dzakanuralam/maqna/refs/heads/main/images/turkey_landscape.jpeg';
-    const POSTER_MOBILE='https://raw.githubusercontent.com/dzakanuralam/maqna/refs/heads/main/images/turkey_portrait.png';
+    const POSTER_DESKTOP='https://raw.githubusercontent.com/dzakanuralam/maqna/refs/heads/main/images/turkey_ottoman.jpeg';
+    const POSTER_MOBILE='https://raw.githubusercontent.com/dzakanuralam/maqna/refs/heads/main/images/turkey_ottoman.jpeg';
     function setPoster(){const img=document.getElementById('popupImg');const ctr=document.getElementById('popupPoster');if(window.innerWidth>window.innerHeight){img.src=POSTER_DESKTOP;ctr.style.width='min(80vw,800px)';}else{img.src=POSTER_MOBILE;ctr.style.width='min(90vw,520px)';}}
     function closePopup(){document.getElementById('popupAd').style.display='none';document.body.classList.remove('no-scroll');}
     function goToTurkiye(){closePopup();window.location.href='/turkey';}
