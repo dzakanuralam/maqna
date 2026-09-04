@@ -36,7 +36,7 @@ const TOURS = {
         ],
         waMsg: "Assalamu'alaikum%20Maqna.ID%2C%20saya%20tertarik%20paket%20Turkiye",
         emailSubject: 'Inquiry: Turkiye Tour',
-        itinerary: 'https://cdn.jsdelivr.net/gh/dzakanuralam/maqna/images/Itinerary-Turkiye.pdf',
+        itinerary: 'https://cdn.jsdelivr.net/gh/dzakanuralam/maqna/images/Ottoman%20Heritage%20Journey.pdf',
     },
     nz: {
         slug: 'new-zealand',
